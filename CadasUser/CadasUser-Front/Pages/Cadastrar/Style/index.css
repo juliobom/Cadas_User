@@ -1,0 +1,105 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    border: box;
+    font-family: "poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+body#body{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    background: radial-gradient(circle,rgba(77, 197, 148, 1) 0%, rgba(5, 184, 255, 1) 100%);
+}
+.caixa{
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    border: 0.5px solid #ffffff55;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.312);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.34);
+    padding: 20px;
+}
+
+.caixa h1{
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    font-size: 2;
+}
+.caixa div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.campodigi input{
+    width: 20em;
+    height: 3em;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 40px;
+    background-color: #ffffff56;
+    
+}
+.campodigi input::placeholder{
+    color:rgba(42, 42, 42, 0.689);
+}
+#cadast{
+    margin-top: 20px;
+    margin-left: 13px;
+    width: 20em;
+    height: 3em;
+    border:none;
+    border-radius: 5px;
+    background-color: #ffffff56;         
+    border-radius: 5px;
+    color: rgba(42, 42, 42, 0.689);
+}
+
+
+#cadast:hover{
+    background-color: #3c577660;
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+    box-shadow: white 0px 0px 40px;
+}
+a{
+
+    color: whitesmoke;
+    width: fit-content;
+    margin-left: 155px;
+    text-decoration: none;
+    display: flex;
+    justify-content: right;
+    margin-right: 13px;
+    /*width: fit-content;*/
+}
+a:hover{
+    color: #3c577660;
+    transition: 0.3s;
+    text-decoration: underline;
+}
+.icone{
+    position: absolute;
+    margin-left: 16em;
+    margin-bottom: 10px;
+    color: rgba(42, 42, 42, 0.689);
+}
+
+.icone:hover{
+    color: white;
+    transition: 0.3s;
+}
