@@ -16,15 +16,14 @@ export const createUser = async (req: Request, res: Response) => {
 }
 export const getUser = async (req: Request, res: Response) => {
     const {id} = req.params //nao vou usar request pelo ID por enquanto.
-    const { email } = req.query
+    const { email } = req.params
     try{
         if(!email){
             res.status(400).json({ error: 'Email é obrigatório' })
             return
         } 
-        const user = await prisma.user.findMany({
-            where: { email: String(email),
-                mode: 'insensitive',},
+        const user = await prisma.user.findUnique({
+            where: { email: String(email)},
             select:{
                 id: true,
                 name: true,

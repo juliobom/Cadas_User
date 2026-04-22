@@ -16,7 +16,7 @@
 
 <body id="body">
     <div>
-        <form id="caixa" onsubmit="consulte(event)">
+        <form id="caixa" onsubmit="consulte(event),buttonup()">
             <h1 id="Titulo">Consultar Usuário</h1>
             <div class="campodigi">
                 <input type="email" id="email" placeholder="E-mail" required>
@@ -27,13 +27,21 @@
                     </path>
                 </svg>
             </div>
-            <a href="../Cadastrar/index.html">Não tem cadastro?</a>
-            <button id="consultar" type="submit">Consultar</button>
+            <div id="a">
+                <a href="../Cadastrar/index.html">Não tem cadastro?</a>
+            </div>
+           
+            
+        <button id="consultar" type="submit">Consultar</button>
+            
             <ul id="lista"></ul>
+            
+            
         </form>
         <script src="user/script.js"></script>
+        <script src="Style/script.js"></script>
     </div>
-    <script src="user/script.js">console.log("HTML carregou 🚀")</script>
+    
 
 </body>
 
