@@ -15,4 +15,24 @@ async function criarcorpo(event) {
     })
     const data = await response.json()
     console.log(data)
+    if(response.ok){
+        let message = document.getElementById("cadast")
+        message.innerHTML = "Cadastrando..."
+        setTimeout(() => {
+            message.innerHTML = "Usuário cadastrado!"
+            message.style.backgroundColor = "#039232" 
+
+        }, 1000)
+        setTimeout(() => {
+            window.location.href = "../Consultar/index.html"
+        }, 2000)  
+    }
+    else{
+        let message = document.getElementById("cadast")
+        setTimeout(() => {
+            message.innerHTML = "Erro ao cadastrar usuário!"
+            message.style.backgroundColor = "#ff0000"
+        }, 1000)
+    }
+
 }

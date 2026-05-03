@@ -1,9 +1,30 @@
 import { Request, Response } from 'express'
+import { userSchema } from "../schemas/userSchema"
+import { ZodError } from 'zod'
 import { prisma } from '../lib/prisma'
 
 //vamos criar as funções para criar, deletar e pegar um usuário por id
 
+
 export const createUser = async (req: Request, res: Response) => {
+
+    try {
+        const data = userSchema.parse(req.body)
+
+        const user = await prisma.user.create({
+            data: {
+                email: data.email,
+                name: data.name,
+                password: data.password
+            }
+        })
+        res.status(201).json(user)
+    }
+    catch (error) {
+        res.status(400).json({ error: 'Erro ao criar usuário' })
+    }
+}
+/*export const createUser = async (req: Request, res: Response) => {
     try {
         const { email , name , password } = req.body
         const user = await prisma.user.create({
@@ -13,7 +34,7 @@ export const createUser = async (req: Request, res: Response) => {
     } catch (error) {
         res.status(500).json({ error: 'Erro ao criar usuário' })
     }
-}
+}*/
 export const getUser = async (req: Request, res: Response) => {
     const {id} = req.params //nao vou usar request pelo ID por enquanto.
     const { email } = req.params

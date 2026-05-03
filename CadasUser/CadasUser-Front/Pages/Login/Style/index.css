@@ -1,0 +1,155 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    
+}
+
+.campodigi input,
+#consultar,
+#a {
+    width: 100%;
+    border-radius: 5px;
+}
+
+h1{
+    font-family: poppins, sans-serif;
+    font-size: 38px;
+    color: rgba(42, 42, 42, 0.783);
+
+}
+
+body#body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: radial-gradient(circle,rgba(77, 197, 148, 1) 0%, rgba(5, 184, 255, 1) 100%);
+}
+
+
+form#caixa{
+    width: 400px;
+    height: 550px;
+    background-color: rgba(255, 255, 255, 0.312);
+    border: 0.5px solid #ffffff55;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.34);
+    padding: 40px;
+}
+
+#img{
+       
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 30%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.479);
+}
+
+
+form#caixa div{
+    display: flex;
+    align-items: center;
+}
+
+h1#Titulo{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.campodigi input{
+    outline: none;
+    height: 50px;
+    border: none;
+    padding-left: 10px;
+    background-color: #ffffff56;
+    margin-bottom: 10px;  
+}
+
+#a{
+    display: block;
+    justify-content: right;
+    margin-bottom: 10px;
+}
+#a a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#a a:hover{
+
+    text-decoration: underline;
+    transition: 0.3s;
+    color: #3c577660;
+
+}
+
+#consultar{
+    margin-bottom:10px;
+    margin-top: 40px;
+    height: 50px;
+    border:none;
+    color: rgba(42, 42, 42, 0.689);
+    background-color: #ffffff56; ;
+}
+
+#consultar:hover{
+    background-color: #3c577660;
+    box-shadow: white 0px 0px 40px;
+    color: rgba(42, 42, 42, 0.989);
+    transition: 0.3s;
+}
+/*alterando posicao do icone*/
+
+#icone{
+    position: absolute;
+    right: 45px;
+    top: 52.5%;
+    transform: translateY(-50%);
+    color: rgba(42, 42, 42, 0.689);
+    
+}
+#icone_2{
+    position: absolute;
+    right: 45px;
+    top: 63.5%;
+    transform: translateY(-50%);
+    color: rgba(42, 42, 42, 0.689);
+    
+}
+#icone:hover,
+#icone_2:hover{
+    color: white;
+    transition: 0.3s;
+}
+#lista{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 90px;;
+    width: 318px;
+    background-color:#3c577600;
+    color: whitesmoke;
+    border: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left:10px;
+    
+    
+}
+
+#icone,#icone_2:active{/*fucionalidade ao clicar no icone*/
+    color: rgba(42, 42, 42, 0.689);
+    transition: 0.3s;
+}
+
