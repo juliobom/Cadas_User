@@ -35,16 +35,10 @@ export const createUser = async (req: Request, res: Response) => {
         res.status(500).json({ error: 'Erro ao criar usuário' })
     }
 }*/
-export const getUser = async (req: Request, res: Response) => {
-    const {id} = req.params //nao vou usar request pelo ID por enquanto.
-    const { email } = req.params
+export const getUser = async (req: Request, res: Response) => {             //nao precisa de parametro para retornar um valor dps vamos fazer o filtro o qual so retorna o valor do email/nome digitado
     try{
-        if(!email){
-            res.status(400).json({ error: 'Email é obrigatório' })
-            return
-        } 
-        const user = await prisma.user.findUnique({
-            where: { email: String(email)},
+        const user = await prisma.user.findMany({
+            
             select:{
                 id: true,
                 name: true,
@@ -52,10 +46,6 @@ export const getUser = async (req: Request, res: Response) => {
                 password: false
             }
         })
-        if(!user){
-            res.status(404).json({ error: 'Usuário não encontrado' })
-            return
-        }
         res.json(user)
     } catch (error) {
         res.status(500).json({ error: 'Erro no servidor 🌐' })

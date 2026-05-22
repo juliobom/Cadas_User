@@ -7,7 +7,8 @@
 
 .container,
 .campodigi input,
-.campodigi button{
+.campodigi button,
+#header{
 
     outline: none;
     border-radius: 5px;
@@ -16,6 +17,7 @@
 
 body#body{
     display: flex;
+    flex-direction: column;  /*ira criar uma coluna impedindo que a proxima tag fique lado a lado*/
     justify-content: center;
     align-items: center; 
     height: 100vh;
@@ -24,15 +26,43 @@ body#body{
 
 
 .container{
-
-    width: 650px;
-    height: 700px;
+    margin-top: 20px;
+    width: 80vw;
+    height: 85vh;
     background-color: whitesmoke;
     padding: 40px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.34);
 
 }
-
+#header{
+    display: flex;
+    margin-top: 10px;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 80vw;
+    height: 70px;
+    padding: 0 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.34);
+    
+    
+}
+#header img{
+    align-items: end;
+    width: 50px;
+    height: 50px;
+    
+}
+#header div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px
+    ;
+    width:70px;
+    height: 50px;
+}
 
 .campodigi{
     display:flex;
@@ -65,7 +95,31 @@ body#body{
 }
 .campodigi button:active{
     background-color: rgb(3, 163, 255);
+    box-shadow: 0px 0px 40px rgb(3, 163, 255);
     transition: 0.1s;
-} 
+}
+
+.icone{
+    border-radius: 5%;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+
+}
+.icone :hover{
+    color: rgb(5, 152, 236);
+    background-color: whitesmoke;
+    transition: 0.1s;
+    cursor: pointer;
+}
+.icone :active{  
+    transition: 0.1s;
+    color: rgb(4, 95, 148);
+}
+
+
 /*agora vamos estilizar a tabela*/
 
