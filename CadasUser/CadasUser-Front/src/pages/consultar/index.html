@@ -34,22 +34,26 @@
             </div>
         </div>
         <div id="user">
-            <div id="emailuser"></div>
+            <div id="emailuser"><p>ola! jujii..</p></div>
             <img src="../../assets/images/User_img.png" alt="">
         </div>
 
     </header>
 
     <section>
-        <form class="container" onsubmit="gerarlist(event)">
+        <form class="container" onsubmit="filtrarlist(event)">
             <div class="campodigi">
                 <input id="inserir" placeholder="Digite o nome/email do usuario">
                 <button type="submit">Buscar</button>
             </div>
-            <ul id="lista"></ul>
+            <h4 id="titulo">Usuarios</h4>
+            <div id="Tabela">
+                <ul type="none" id="lista"></ul>
+            </div>
 
         </form>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../js/consultar.js"></script>
 </body>
 

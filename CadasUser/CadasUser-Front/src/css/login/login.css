@@ -106,6 +106,7 @@ h1#Titulo{
     background-color: #3c577660;
     box-shadow: white 0px 0px 40px;
     color: rgba(42, 42, 42, 0.989);
+    cursor: pointer;
     transition: 0.3s;
 }
 /*alterando posicao do icone*/
@@ -130,6 +131,7 @@ h1#Titulo{
 #icone_2:hover{
     color: white;
     transition: 0.3s;
+    
 }
 #lista{
     position: absolute;
@@ -148,7 +150,7 @@ h1#Titulo{
     
 }
 
-#icone,#icone_2:active{/*fucionalidade ao clicar no icone*/
+#icone:active,#icone_2:active{/*fucionalidade ao clicar no icone*/
     color: rgba(42, 42, 42, 0.689);
     transition: 0.3s;
 }

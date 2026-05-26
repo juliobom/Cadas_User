@@ -18,23 +18,13 @@ export const createUser = async (req: Request, res: Response) => {
                 password: data.password
             }
         })
-        res.status(201).json(user)
+        return res.status(201).json(user)
     }
     catch (error) {
-        res.status(400).json({ error: 'Erro ao criar usuário' })
+        return res.status(400).json({ error: 'Erro ao criar usuário' })
     }
 }
-/*export const createUser = async (req: Request, res: Response) => {
-    try {
-        const { email , name , password } = req.body
-        const user = await prisma.user.create({
-            data: { email , name , password }
-        })
-        res.status(201).json(user)
-    } catch (error) {
-        res.status(500).json({ error: 'Erro ao criar usuário' })
-    }
-}*/
+
 export const getUser = async (req: Request, res: Response) => {             //nao precisa de parametro para retornar um valor dps vamos fazer o filtro o qual so retorna o valor do email/nome digitado
     try{
         const user = await prisma.user.findMany({
@@ -46,20 +36,39 @@ export const getUser = async (req: Request, res: Response) => {             //na
                 password: false
             }
         })
-        res.json(user)
+        return res.json(user)
     } catch (error) {
-        res.status(500).json({ error: 'Erro no servidor 🌐' })
+        return res.status(500).json({ error: 'Erro no servidor 🌐' })
     }
 }
 
 export const deleteUser = async (req: Request, res: Response) =>{
     const { id }  = req.params
+    const { password } = req.body
     try{
-        await prisma.user.delete({
-            where: { id: Number(id)}// vai buscar o usuario pelo id e deletar.
+
+        const user = await prisma.user.findUnique({
+            where: {
+                id: Number(id)
+            }
         })
-        res.status(200).json({ message: 'Usuário deletado com sucesso' })
+
+        if(!user){
+
+           return res.status(404).json({error: "usuario nao encontrado"})
+        }
+        if(user?.password !== password){
+            return res.status(404).json({error:"senha incorreta"})
+        }
+
+        await prisma.user.delete({
+
+            where: { id: Number(id)}// vai buscar o usuario pelo id e deletar.
+            })
+
+            return res.status(200).json({ message: 'Usuário deletado com sucesso' })
+
     } catch (error) {
-        res.status(500).json({ error: 'Erro ao deletar usuário' }) //caso nao encontrar o usuario ou outro erro, retorna um erro 500.
+        return res.status(500).json({ error: 'Erro no servidor' }) //caso nao encontrar o usuario ou outro erro, retorna um erro 500.
     }
 }
